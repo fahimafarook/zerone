@@ -1,0 +1,252 @@
+@font-face {
+	font-family: 'latos';
+	src: url('./fonts/lato-regular.woff2') format('woff2')
+  }
+  
+  
+ 
+ .landing-page-parent{
+	position: relative;
+    width: 100%;
+    display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	background-color: rgb(255, 255, 255);
+	width: 100vw;
+    height: 120vh;
+  }
+
+  .name-place{
+	position: relative;
+	background-color: rgb(90, 82, 97);
+	height: 50vh;
+	width: 100vw;
+  }
+
+  .animation-place{
+	position: relative;
+	background-color: rgb(0, 0, 0);
+	height: 50vh;
+	width: 100vw;
+  }
+
+  .spline-container {
+    width: fit-content;
+    align-items: center;
+	right: 0;
+  }
+
+  .content {
+	align-items: right;
+}
+
+
+.content h2 {
+	color: #000000;
+	font-size: 15em;
+	position: absolute;
+	/* transform: translate(-50%, -50%); */
+  	letter-spacing: 30px;
+}
+
+.content h2:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 2px #000000;
+}
+
+.content h2:nth-child(2) {
+	color:  #000000;
+	animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+.company-title{
+	justify-content: center;
+	position: absolute;
+	z-index: 1;
+	top:0%;
+	left: 15%;
+}
+
+.pricing-page-section{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff;
+	background-image: url(../css/images/img1.jpg);	
+	background-size: cover;
+	background-position: center center;
+	}
+
+.box {
+	width: 80vw;
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	}
+
+.my-row {
+    flex: 1;
+    border: 1px solid  rgb(25, 25, 25);
+	background-color: rgba(32, 32, 32, 0.9);
+    text-align: center;
+	border-radius: 10px;
+	display: flex;
+    flex-direction: row;
+	z-index: 1;
+	
+}
+
+.my-row:hover{
+	border: solid 1px rgba(255, 255, 255, 0.1);
+	background-color: rgba(67, 67, 67, 0.9);
+}
+
+.cols {
+    flex: 1;
+    text-align: center;
+	align-self: center;
+	font-size: 110%;
+	color: inherit;
+	font-family: 'latos';
+	z-index: 2;
+	color: #ffffff;
+}
+
+.header-col{
+	background-color: rgb(190, 25, 25);
+}
+
+.header-col .cols{
+	color: #ffffff;
+	text-transform: capitalize;
+	font-size: 110%;
+	font-family: 'latos';
+	font-weight: 500;
+}
+
+
+.netspeed{
+	color: rgb(255, 2, 2);
+}
+
+.about-us-section{
+	height: 100vh;
+	width: 100vw;
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-text{
+	font-size: 250%;
+	padding: 10vw;
+	font-weight: 200;
+}
+
+.header-buttons{
+	/* width: 100vw; */
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color:#ffffff;
+	margin-top: 2vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin-right: 5vw;
+	margin-top: 3vh;
+}
+
+.enquire-button{
+	height: 5vh;
+	width: 15vh;
+	background-color:#be0606;
+	border-radius: 0px;
+	border: none;
+	color: white;
+	border-radius: 25px;
+	font-size: 90%;
+}	
+
+.pricing-button{
+	margin-left: 2vw;
+	height: 5vh;
+	width: 15vh;
+	color: inherit;
+	background-color: inherit;
+	border: solid 1.5px #292929;
+	border-radius: 25px;
+	/* border: none; */
+	font-size: 90%;
+	color: #000000;
+}
+
+.contact-form{
+	position: absolute;
+	height: 70vh;
+	width: 70vw;
+	top: 50%;
+	left: 50%;
+	background-color: rgba(132, 0, 0, 0.97);
+	transform: translate(-50%,-50%);
+	z-index: 5;
+}
+
+.form-field-container{
+	position: relative;
+	width: 80%;
+	height: 80%;
+	/* background-color: black; */
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.form-fields{
+	position: relative;
+	flex: 1;
+	width: 100%;
+	/* background-color: #be0606; */
+	padding: 30px;
+	/* border: solid 5px white; */
+	color: #ffffff;
+	font-size: 140%;
+}
+
+
+
