@@ -14,6 +14,11 @@ function LocationComponent() {
     }
   }, []);
 
+  useEffect(() => {
+    if(latitude !== null)
+      getGeoLocation();
+  }, [latitude, longitude]);
+
 
   const handleSuccess = (position) => {
     const { latitude, longitude } = position.coords;
@@ -33,28 +38,27 @@ function LocationComponent() {
     }
   };
 
-  const fetchAddressFromCoordinates = async () => {
-    try {
-      setLatitude(12.9417913)
-      setLongitude(80.2334273)
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=12.9417913,80.2334273&key=AIzaSyAjglQIm1LV4-f1709X-T-mMUi0V_1TOkA`
-      );
-
+  function getGeoLocation() {
+    console.log(latitude, longitude);
+    const apiUrl = `https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}`;
+    fetch(apiUrl)
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Unable to fetch address data.');
+        throw new Error('Network response was not ok');
       }
-
-
-      const data = await response.json();
-      // console.log(data.results)
-      const formattedAddress = data.results[0]?.formatted_address || 'Address not found';
+      return response.json();
+    })
+    .then((data) => {
+      const formattedAddress = data.address; // Replace with the correct JSON field
+      console.log(formattedAddress);
       setAddress(formattedAddress);
-    } catch (error) {
-      setAddress('Error fetching address');
-      console.error('Error fetching address:', error);
-    }
-  };
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+
+
 
   return (
     <div>
@@ -65,7 +69,7 @@ function LocationComponent() {
           <p>
             Latitude: {latitude}, Longitude: {longitude}
           </p>
-          <p>Address: {address}</p>
+          {/* <p>Address: {address}</p> */}
         </div>
       )}
     </div>
@@ -73,3 +77,4 @@ function LocationComponent() {
 }
 
 export default LocationComponent;
+

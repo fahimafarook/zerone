@@ -3,13 +3,13 @@ import '../css/common.css'
 
 function PricingPage() {
     return (
-        <div className='pricing-page-section'>
+        <div id='pricingPage' className='pricing-page-section'>
             <div className="box">
-                 <div className="my-row header-col">
+                 <div className="header-row">
                     <div className='cols'>Net Speed</div>
-                    <div className='cols'>monthly</div>
-                    <div className='cols'>quarterly</div>
-                    <div className='cols'>halfyearly</div>
+                    <div className='cols'>Plan Name</div>
+                    <div className='cols'>Quarterly</div>
+                    <div className='cols'>Half-yearly</div>
                  </div>
                 <div className="my-row">
                     <div className='cols netspeed'>50 Mbps</div>
@@ -54,7 +54,7 @@ function PricingPage() {
                     <div className='cols'>11,994</div>
                 </div>
             </div>
-            <div className="wavy-pattern"></div>
+            <p className='additional-charge justify-content-end'>*Additional GST applicable on Billing</p>
         </div>
     );
 }
