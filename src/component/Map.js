@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import 'ol/ol.css'; // Import OpenLayers styles
+// import 'ol/ol.css'; // Import OpenLayers styles
 import Map from 'ol/Map';
 import View from 'ol/View';
 import OSM from 'ol/source/OSM';
