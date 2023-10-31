@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react';
 // import 'ol/ol.css'; // Import OpenLayers styles
-import Map from 'ol/Map';
-import View from 'ol/View';
-import OSM from 'ol/source/OSM';
-import Overlay from 'ol/Overlay';
-import { fromLonLat } from 'ol/proj';
-import { toStringHDMS } from 'ol/coordinate'; // To format the coordinate display
-import '../App.css'
+// import Map from 'ol/Map';
+// import View from 'ol/View';
+// import OSM from 'ol/source/OSM';
+// import Overlay from 'ol/Overlay';
+// import { fromLonLat } from 'ol/proj';
+// import { toStringHDMS } from 'ol/coordinate'; // To format the coordinate display
+// import '../App.css'
 
-import Geolocation from 'ol/Geolocation.js';
+// import Geolocation from 'ol/Geolocation.js';
 
-import Feature from 'ol/Feature.js';
-import Point from 'ol/geom/Point.js';
-import {Icon, Style} from 'ol/style.js';
-import {Modify} from 'ol/interaction.js';
-import {OGCMapTile, Vector as VectorSource} from 'ol/source.js';
-import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
+// import Feature from 'ol/Feature.js';
+// import Point from 'ol/geom/Point.js';
+// import {Icon, Style} from 'ol/style.js';
+// import {Modify} from 'ol/interaction.js';
+// import {OGCMapTile, Vector as VectorSource} from 'ol/source.js';
+// import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
 
 
 function OpenLayersMap() {
@@ -70,62 +70,62 @@ function OpenLayersMap() {
 
 
 
-const iconFeature = new Feature({
-  geometry: new Point([0, 0]),
-  name: 'Null Island',
-  population: 4000,
-  rainfall: 500,
-});
+// const iconFeature = new Feature({
+//   geometry: new Point([0, 0]),
+//   name: 'Null Island',
+//   population: 4000,
+//   rainfall: 500,
+// });
 
-const iconStyle = new Style({
-  image: new Icon({
-    anchor: [0.5, 46],
-    anchorXUnits: 'fraction',
-    anchorYUnits: 'pixels',
-    src: 'data/icon.png',
-  }),
-});
+// const iconStyle = new Style({
+//   image: new Icon({
+//     anchor: [0.5, 46],
+//     anchorXUnits: 'fraction',
+//     anchorYUnits: 'pixels',
+//     src: 'data/icon.png',
+//   }),
+// });
 
-iconFeature.setStyle(iconStyle);
+// iconFeature.setStyle(iconStyle);
 
-const vectorSource = new VectorSource({
-  features: [iconFeature],
-});
+// const vectorSource = new VectorSource({
+//   features: [iconFeature],
+// });
 
-const vectorLayer = new VectorLayer({
-  source: vectorSource,
-});
+// const vectorLayer = new VectorLayer({
+//   source: vectorSource,
+// });
 
-const rasterLayer = new TileLayer({
-  source: new OGCMapTile({
-    url: 'https://maps.gnosis.earth/ogcapi/collections/NaturalEarth:raster:HYP_HR_SR_OB_DR/map/tiles/WebMercatorQuad',
-    crossOrigin: '',
-  }),
-});
+// const rasterLayer = new TileLayer({
+//   source: new OGCMapTile({
+//     url: 'https://maps.gnosis.earth/ogcapi/collections/NaturalEarth:raster:HYP_HR_SR_OB_DR/map/tiles/WebMercatorQuad',
+//     crossOrigin: '',
+//   }),
+// });
 
-const target = document.getElementById('map');
-const map = new Map({
-  layers: [rasterLayer, vectorLayer],
-  target: target,
-  view: new View({
-    center: [0, 0],
-    zoom: 3,
-  }),
-});
+// const target = document.getElementById('map');
+// const map = new Map({
+//   layers: [rasterLayer, vectorLayer],
+//   target: target,
+//   view: new View({
+//     center: [0, 0],
+//     zoom: 3,
+//   }),
+// });
 
-const modify = new Modify({
-  hitDetection: vectorLayer,
-  source: vectorSource,
-});
-modify.on(['modifystart', 'modifyend'], function (evt) {
-  target.style.cursor = evt.type === 'modifystart' ? 'grabbing' : 'pointer';
-});
-const overlaySource = modify.getOverlay().getSource();
-overlaySource.on(['addfeature', 'removefeature'], function (evt) {
-  target.style.cursor = evt.type === 'addfeature' ? 'pointer' : '';
-});
+// const modify = new Modify({
+//   hitDetection: vectorLayer,
+//   source: vectorSource,
+// });
+// modify.on(['modifystart', 'modifyend'], function (evt) {
+//   target.style.cursor = evt.type === 'modifystart' ? 'grabbing' : 'pointer';
+// });
+// const overlaySource = modify.getOverlay().getSource();
+// overlaySource.on(['addfeature', 'removefeature'], function (evt) {
+//   target.style.cursor = evt.type === 'addfeature' ? 'pointer' : '';
+// });
 
-map.addInteraction(modify);
+// map.addInteraction(modify);
 
 return () => {
   // Cleanup when the component unmounts
