@@ -136,7 +136,7 @@
 
 .content h2:nth-child(2) {
 	/* color:  #be0606; */
-	background: -webkit-linear-gradient(rgb(250, 0, 0),rgb(77, 0, 0));
+	background: -webkit-linear-gradient(#FE3303,#AD0507);
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 	animation: animate 4s ease-in-out infinite;
@@ -282,7 +282,8 @@
 	min-height: 5vh;
 	height: fit-content;
 	width: 15vh;
-	background-color:#be0606;
+	/* background-color:#be0606; */
+	background-color: #BB1008;
 	border: solid 1.5px #be0606;
 	color: white;
 	border-radius: 25px;
@@ -339,15 +340,16 @@
 	}
 
 	.header-logo {
-		max-height: 100px;
+		max-height: 80px;
 		padding: 10px;
-		margin-left: 10px;
+		margin-left: 5px;
 	}
 
 	.enquire-button{
 		height: 5vh;
 		width: 15vh;
-		background-color:#be0606;
+		/* background-color:#be0606; */
+		background-color: #BB1008;
 		border: none;
 		color: white;
 		border-radius: 25px;
@@ -366,10 +368,13 @@
 	}
 
 	.login-button{
-		padding: 10px;
-		width: 5vw;
+		position: absolute;
+		/* top: 5vh; */
+		right: -2vh;
+		padding: 1px;
+		padding-top: 3px;
+		transform: scale(0.8);
 		max-height: fit-content;
-		background-color: inherit;
 	}
 }
 .header-row{
