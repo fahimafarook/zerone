@@ -23,7 +23,7 @@ function LandingPage(props) {
     return (
         <div className='landing-section'>
             <div className='header-buttons container-fluid row justify-content-between'>
-                <img className='header-logo col-5 col-md-2 img-fluid' src={zeroneLogo} alt='ZERONE' />
+                <img className='header-logo col-4 col-md-2 img-fluid' src={zeroneLogo} alt='ZERONE' />
                 
                 {
                     (deviceName === "tab" || deviceName === "laptop") &&  <div className='header-btns col-md-4 row justify-content-end'>    
@@ -36,7 +36,7 @@ function LandingPage(props) {
                     </div>
                 }
                 {
-                    (deviceName === "phone") && <img className='login-button col-2' onClick={()=>handleRedirect("userLogin")} src={loginIcon} alt='Login' />
+                    (deviceName === "phone") && <img className='login-button col-2 img-fluid' onClick={()=>handleRedirect("userLogin")} src={loginIcon} alt='Login' />
                 }
             </div>
             <div className='landing-page-parent container-fluid'>
