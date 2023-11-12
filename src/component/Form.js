@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import useLocationCoordinates from '../utils/locationCoordinates';
-// import useGeoLocation from '../utils/geoLocation';
 import '../css/common.css';
 import locationPin from "../css/images/location_pin.png"
 
@@ -113,7 +111,7 @@ function Form() {
                     <input type='hidden' name='map' value={`https://www.google.com/maps/search/${coords[0]},${coords[1]}/@${coords[0]},${coords[1]},15z?entry=ttu`} />
                     <div className="inputBx row justify-content-start">
                         <span className='form-span col-4 col-md-3'>Address</span>
-                        <textarea className = "form-fields address-field col-6" type="text" name='Address' value={address} onChange={(e) => {setAddress(e.target.value);}} />
+                        <textarea className = "form-fields address-field col-6" type="text" name='Address' value={address}  />
                         <div className = 'btn-locate-me col-2 col-md-2' onClick={fillLocation}>
                           <img src={locationPin} className='img-fluid'/>
                           <br/>

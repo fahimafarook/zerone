@@ -1,14 +1,6 @@
 import React from 'react';
-import { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import splitType from 'split-type';
 
 function Aboutus(props) {
-
-    useEffect(() => {
-
-      }, []);
 
     return (
         <div>

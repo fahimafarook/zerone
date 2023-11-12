@@ -41,11 +41,13 @@ function LandingPage(props) {
             </div>
             <div className='landing-page-parent container-fluid'>
                 <div className='company-title row'>
-                    <div className="content col-8">
+                    <div className="content col-12">
                         <h2 className='company-name'>Zerone</h2>
-                        <h2 style={{display: 'flex', flexDirection: 'row'}}>Zerone<h5 style={{color:'black'}}>5G</h5></h2>
-                        {/* <div className='company-5g'>5G</div> */}
+                        <h2 style={{display: 'flex', flexDirection: 'row'}}>Zerone</h2>
                     </div>
+                    {/* <div className='col-12 col-md-12 row justify-content-center'>
+                        <div className='company-5g col-3'>5G</div>
+                    </div> */}
                 </div>
                 <div className="spline-container row justify-content-start">
                     <Spline className='spline-obj col-10' scene="https://prod.spline.design/lSkQdxWBpp2eNXGc/scene.splinecode"/>
